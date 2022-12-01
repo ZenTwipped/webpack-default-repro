@@ -32,8 +32,8 @@ export default function webpackConfig () {
       path: path.resolve(__dirname, './dist'),
       pathinfo: true,
       filename: 'js/entry.js',
-      chunkFilename: 'js/[name].chunk.[hash]js',
-      assetModuleFilename: 'static/media/[name].[hash][ext]',
+      chunkFilename: 'js/[name].chunk.[chunkhash]js',
+      assetModuleFilename: 'static/media/[name].[fullhash][ext]',
     },
 
     module: {
