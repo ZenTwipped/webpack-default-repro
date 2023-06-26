@@ -1,14 +1,12 @@
 {
-  "name": "webpack-nonce-repro",
+  "name": "webpack-default-repro",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
     "lint": "eslint --fix .",
-    "prestart": "rimraf dist && webpack --config webpack.config.mjs",
-    "start": "webpack-dev-server --config webpack.config.mjs",
-    "build": "rimraf dist && NODE_ENV=production webpack --config webpack.config.mjs"
+    "prestart": "rimraf dist && webpack --config webpack.config.cjs",
+    "start": "webpack-dev-server --config webpack.config.cjs",
+    "build": "rimraf dist && NODE_ENV=production webpack --config webpack.config.cjs"
   },
   "engines": {
     "node": ">=16.13.0"
@@ -17,7 +15,7 @@
   "author": "Jocelyn Badgley <joc@twipped.com>",
   "license": "MIT",
   "dependencies": {
-    "package2": "./package2",
+    "@ZenTwipped/webpack-esm-component-dependant": "3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3"
@@ -37,26 +35,5 @@
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.11.1",
     "webpack-manifest-plugin": "^5.0.0"
-  },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "env": {
-      "es6": true,
-      "node": true
-    },
-    "overrides": [
-      {
-        "files": "*.mjs",
-        "extends": "eslint:recommended",
-        "env": {
-          "es6": true,
-          "node": true
-        },
-        "parserOptions": {
-          "ecmaVersion": "latest",
-          "sourceType": "module"
-        }
-      }
-    ]
   }
 }
